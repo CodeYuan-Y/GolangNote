@@ -1,6 +1,7 @@
 #### 异常处理
 
 `panic` 抛出异常 `recover`获取异常
+
 Go中可以抛出一个`panic`的异常，然后在`defer`中通过`recover`捕获这个异常，然后正常处理。
 
 **panic**
@@ -9,13 +10,19 @@ Go中可以抛出一个`panic`的异常，然后在`defer`中通过`recover`捕�
    3、直到`goroutine`整个退出，并报告错误
 **recover**
 1、用来控制一个`goroutine`的`panicking`行为，捕获`panic`，从而影响应用的行为
-   2、一般的调用建议
-       a). 在`defer`函数中，通过`recever`来终止一个`goroutine`的`panicking`过程，从而恢复正常代码的执行
-       b). 可以获取通过`panic`传递的`error`
+
+2、一般的调用建议
+
+​		a). 在`defer`函数中，通过`recover`来终止一个`goroutine`的`panicking`过程，从而恢复正常代码的执行
+
+​		b). 可以获取通过`panic`传递的`error`
 
 上面通俗的解释:
-`panic`英语原意:恐慌 `recover`英语愿意:救治
+
+`panic`英语原意:恐慌 `recover`英语愿意:救
+
 当你遇到`panic`(恐慌)你会崩溃掉 - 啥也干不了
+
 当你被救治(`recover`) 以后 - 你又能工作了
 
 就是程序只会执行`panic`之前和`recover`之后的程序,程序"恐慌中"是什么也干不了的
@@ -52,9 +59,13 @@ b
 ```
 
 **几个注意点**
+
 1.`recover`只有在`defer`调用的函数中才有效
+
 2.`recover`所在的`defer`必须放在`panic`之前定义(放在`panic`后面，当`panic`中断程序那不就不会再执行下面的`defer`了吗)
+
 3.`recover` 处理异常后，逻辑并不会恢复到 panic 那个点去，函数跑到 defer 之后的那个点
+
 4.多个` defer` 会形成 `defer `栈，后定义的 `defer `语句会被最先调用
 
 ```go
