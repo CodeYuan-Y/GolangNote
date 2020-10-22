@@ -7,3 +7,5 @@
 [panic和recover 10-13](https://github.com/CodeYuan-Y/GolangNote/blob/main/2020-10/panic%E5%92%8Crecover%2010-13.md)
 
 [方法 10-17](https://github.com/CodeYuan-Y/GolangNote/blob/main/2020-10/%E6%96%B9%E6%B3%95%2010-17.md)
+
+[接口]([https://github.com/CodeYuan-Y/GolangNote/blob/main/2020-10/%E6%8E%A5%E5%8F%A3%2010-19.md](https://github.com/CodeYuan-Y/GolangNote/blob/main/2020-10/接口 10-19.md))
